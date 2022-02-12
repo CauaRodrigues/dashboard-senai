@@ -57,6 +57,7 @@ const Avanco = () => {
 				series={chartOptions.series}
 				type="area"
 				height="350"
+				width="500"
 			/>
 		</>
 	);

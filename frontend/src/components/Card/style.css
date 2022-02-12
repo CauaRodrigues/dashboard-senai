@@ -1,0 +1,97 @@
+.card {
+	height: 250px;
+	width: 250px;
+	display: flex;
+	border-radius: 30px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.card-icon img {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	opacity: 0.95;
+	padding: 10px;
+}
+
+.card-details h3 {
+	font-size: 23px;
+	margin: 5px 0;
+	text-align: center;
+}
+
+.card-details p {
+	text-align: center;
+	margin: 5px 0;
+}
+
+.temp {
+	color: #50061d;
+	background-color: rgb(253, 92, 92);
+}
+
+.temp .card-icon img {
+	background-image: linear-gradient(
+		to right bottom,
+		#d43a3a,
+		#d63f3f,
+		#d84343,
+		#da4848,
+		#dc4c4c,
+		#de4c4c,
+		#e04c4b,
+		#e24c4b,
+		#e44746,
+		#e74241,
+		#e93c3c,
+		#eb3636
+	);
+}
+
+.avance {
+	color: #d0f2ff;
+	background-color: #042a7c;
+}
+
+.avance .card-icon img {
+	background-image: linear-gradient(
+		to right bottom,
+		#455f96,
+		#405990,
+		#3b548a,
+		#364e85,
+		#31497f,
+		#375589,
+		#3f6092,
+		#476c9b,
+		#638db4,
+		#83aecd,
+		#a8d0e5,
+		#d0f2ff
+	);
+}
+
+.rotation {
+	color: #7a4f01;
+	background-color: #fff7cd;
+}
+
+.rotation .card-icon img {
+	background-image: linear-gradient(
+		to right bottom,
+		#fff7cd,
+		#faedba,
+		#f6e3a7,
+		#f2d894,
+		#efcd82,
+		#efcd82,
+		#efcd82,
+		#efcd82,
+		#f2d894,
+		#f6e3a7,
+		#faedba,
+		#fff7cd
+	);
+}
