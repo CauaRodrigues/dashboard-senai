@@ -1,7 +1,12 @@
 header.container {
-	background-color: #e9b610;
+	background-color: rgb(30, 33, 42);
+	color: #fafafa;
+	overflow: hidden;
 	height: 80px;
 	width: 100%;
+	top: 0;
+	position: fixed;
+	z-index: 1000;
 }
 
 .header-content {
@@ -14,18 +19,14 @@ header.container {
 .header-content h1 {
 	font-size: 30px;
 	font-weight: 600;
-	margin: 0 22px;
-}
-
-.profile {
-	width: 50px;
-	height: 50px;
-	margin: 0 22px;
-	padding: 10px;
-	border-radius: 50%;
-	background-color: #fddc37;
+	margin: 0 30px;
+	font-style: oblique;
+	opacity: 1;
 }
 
 .profile img {
-	width: 100%;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 40px;
 }

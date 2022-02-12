@@ -1,0 +1,34 @@
+article.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 80%;
+	height: 130vh;
+	margin: 60px auto;
+	margin-bottom: 0;
+}
+
+article.container h1 {
+	color: #fafafa;
+	font-size: 28px;
+	font-weight: 500;
+}
+
+.chart-main {
+	width: 100%;
+	margin: 40px 0;
+}
+
+.double-chart {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.chart {
+	width: 50%;
+}
