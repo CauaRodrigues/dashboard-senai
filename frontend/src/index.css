@@ -11,6 +11,20 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar {
+	width: 0.3rem;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 0.25rem;
+	background: #a8b3cf;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
 body {
 	background-color: rgb(17, 19, 24);
 	overflow-x: hidden;

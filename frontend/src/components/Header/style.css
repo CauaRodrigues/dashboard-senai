@@ -4,8 +4,8 @@ header.container {
 	overflow: hidden;
 	height: 80px;
 	width: 100%;
+	position: sticky;
 	top: 0;
-	position: fixed;
 	z-index: 1000;
 }
 

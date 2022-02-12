@@ -1,5 +1,6 @@
 import React from "react";
 import Avanco from "../../components/Avanco";
+import CardTemp from "../../components/CardTemp";
 import Header from "../../components/Header";
 import Rotacao from "../../components/Rotacao";
 import Temperatura from "../../components/Temperatura";
@@ -11,19 +12,27 @@ const Dashboard = () => {
 			<Header />
 
 			<article className="container">
-				<div className="chart-main">
-					<Rotacao />
-				</div>
+				<section className="cards">
+					<CardTemp />
+					<CardTemp />
+					<CardTemp />
+				</section>
 
-				<div className="double-chart">
-					<div className="chart">
-						<Temperatura />
+				<section className="charts">
+					<div className="chart-main">
+						<Rotacao />
 					</div>
 
-					<div className="chart">
-						<Avanco />
+					<div className="double-chart">
+						<div className="chart">
+							<Temperatura />
+						</div>
+
+						<div className="chart">
+							<Avanco />
+						</div>
 					</div>
-				</div>
+				</section>
 			</article>
 		</>
 	);
