@@ -48,5 +48,12 @@ section.charts {
 }
 
 .chart {
-	width: 50%;
+	margin: 2px;
+	width: 47%;
+}
+
+@media screen and (max-width: 1221px) {
+	.chart {
+		width: 100%;
+	}
 }

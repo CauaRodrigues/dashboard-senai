@@ -49,7 +49,6 @@ const Temperatura = () => {
 				series={chartOptions.series}
 				type="bar"
 				height="350"
-				width="500"
 			/>
 		</>
 	);
