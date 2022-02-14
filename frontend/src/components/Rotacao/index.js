@@ -4,6 +4,8 @@ import { api } from "../../service/api";
 import formatDateTime from "../../utils/formatDateTime";
 
 const Rotacao = () => {
+	const [registersNumbers, setRegistersNumbers] = useState(0);
+
 	const [rotationData, setRotationData] = useState({
 		labels: {
 			categories: [],
@@ -20,6 +22,7 @@ const Rotacao = () => {
 		api.get("/rotations").then((response) => {
 			const myLabels = response.data.map((res) => formatDateTime(res.register));
 			const mySeries = response.data.map((res) => res.rotation);
+			setRegistersNumbers(response.data.length);
 
 			setRotationData({
 				labels: {
@@ -47,6 +50,10 @@ const Rotacao = () => {
 			text: "Velocidade da Rotação RPM",
 			align: "center",
 		},
+		subtitle: {
+			text: `${registersNumbers} Registros`,
+			align: "center",
+		},
 		legend: {
 			position: "top",
 			horizontalAlign: "left",
@@ -59,6 +66,11 @@ const Rotacao = () => {
 			},
 		},
 		colors: ["#3777FF"],
+		yaxis: {
+			title: {
+				text: "RPM",
+			},
+		},
 	};
 
 	return (

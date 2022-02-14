@@ -13,7 +13,7 @@ const Dashboard = () => {
 	const [avanceMax, setAvanceMax] = useState(0);
 
 	useEffect(() => {
-		api.get("/maximum/rotation/").then(({ data }) => {
+		api.get("/maximum").then(({ data }) => {
 			setRotationMax(data[0].maxRotation);
 			setTemperatureMax(data[0].maxTemperature);
 			setAvanceMax(data[0].maxAvance);
