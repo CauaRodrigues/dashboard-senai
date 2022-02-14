@@ -1,59 +1,75 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import { api } from "../../service/api";
+import formatDateTime from "../../utils/formatDateTime";
 
-const chartOptions = {
-	series: [
-		{
-			name: "Rotação",
-			data: [48, 70, 20, 90, 36, 80, 30, 91, 60],
+const Rotacao = () => {
+	const [rotationData, setRotationData] = useState({
+		labels: {
+			categories: [],
 		},
-	],
-	options: {
-		chart: {
-			background: "tranparent",
-		},
+		series: [
+			{
+				name: "",
+				data: [],
+			},
+		],
+	});
+
+	useEffect(() => {
+		api.get("/rotations").then((response) => {
+			const myLabels = response.data.map((res) => formatDateTime(res.register));
+			const mySeries = response.data.map((res) => res.rotation);
+
+			setRotationData({
+				labels: {
+					categories: myLabels,
+				},
+				series: [
+					{
+						name: "RPM",
+						data: mySeries,
+					},
+				],
+			});
+		});
+	}, []);
+
+	const options = {
 		dataLabels: {
-			enabled: true,
+			enabled: false,
 		},
 		stroke: {
 			curve: "smooth",
+			colors: ["#53D8FB"],
 		},
-
-		xaxis: {
-			type: "category",
-			categories: [
-				"08/08/22 11:00:14",
-				"08/08/22 11:00:14",
-				"08/08/22 11:00:14",
-				"08/08/22 11:00:14",
-				"08/08/22 11:00:14",
-				"08/08/22 11:00:14",
-				"08/08/22 11:00:14",
-				"08/08/22 11:00:14",
-				"08/08/22 11:00:14",
-				"08/08/22 11:00:14",
-				"08/08/22 11:00:14",
-			],
+		title: {
+			text: "Velocidade da Rotação RPM",
+			align: "center",
 		},
 		legend: {
-			position: "bottom",
+			position: "top",
+			horizontalAlign: "left",
 		},
-		grid: {
-			show: true,
+		fill: {
+			type: "gradient",
+			gradient: {
+				opacityFrom: 0.6,
+				opacityTo: 0.8,
+			},
 		},
-	},
-};
+		colors: ["#3777FF"],
+	};
 
-const Rotacao = () => {
 	return (
 		<>
 			<h1>Rotação</h1>
 
 			<ReactApexChart
-				options={chartOptions.options}
-				series={chartOptions.series}
+				options={{ xaxis: rotationData.labels, ...options }}
+				series={rotationData.series}
 				type="area"
-				height="350"
+				height="450"
 			/>
 		</>
 	);

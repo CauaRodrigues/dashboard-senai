@@ -32,7 +32,6 @@ app.use(
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Seleciona a velocidade de rotações
 app.get("/api/rotations", (req, res) => {
 	db.query(
 		"SELECT id, rotation, register FROM machine LIMIT 25",
@@ -75,8 +74,22 @@ app.get("/api/temperature", (req, res) => {
 	);
 });
 
-// Query para obter o máximo de cada columa:
+// Query para obter o máximo de cada coluna:
 // -->> SELECT MAX(rotation), MAX(temperature), MAX(avance) FROM machine;
+
+app.get("/api/maximum/rotation", (req, res) => {
+	db.query(
+		"SELECT MAX(rotation) as maxRotation, MAX(temperature) as maxTemperature, MAX(avance) as maxAvance FROM machine",
+		(err, result) => {
+			if (err) {
+				console.error(err);
+			} else {
+				res.send(result);
+				console.log(result);
+			}
+		}
+	);
+});
 
 app.listen(3001, () => {
 	console.log("Running on http://localhost:3001/");

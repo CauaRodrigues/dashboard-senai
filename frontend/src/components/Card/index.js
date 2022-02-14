@@ -20,7 +20,7 @@ const Card = ({ iconType, cardType, children }) => {
 	return (
 		<div className={`card ${cardType}`}>
 			<div className="card-icon">
-				<img src={icon} alt="Icone de temperatura" />
+				<img src={icon} alt="Icone" />
 			</div>
 
 			<div className="card-details">{children}</div>
